@@ -24,7 +24,7 @@ public class SelectProductPageObject {
 	
 	@CacheLookup
 	@FindBy(id="add-to-cart-sauce-labs-backpack")
-	private WebElement productSauceLabsBackpack;
+	private WebElement productSauceLabsBackpackButton;
 	
 	public WebDriver getDriver() {
 		return driver;
@@ -42,8 +42,9 @@ public class SelectProductPageObject {
 		return carrinho;
 	}
 
-	public WebElement getProductSauceLabsBackpack() {
-		return productSauceLabsBackpack;
+
+	public WebElement getProductSauceLabsBackpackButton() {
+		return productSauceLabsBackpackButton;
 	}
 
 	public SelectProductPageObject(WebDriver driver) {
