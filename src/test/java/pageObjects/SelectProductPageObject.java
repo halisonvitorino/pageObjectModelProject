@@ -17,7 +17,7 @@ public class SelectProductPageObject extends BrowserAndPageManager{
 	private WebElement qtdNoCarrinho;
 	
 	@CacheLookup
-	@FindBy(css="shopping_cart_link")
+	@FindBy(css="a.shopping_cart_link")
 	private WebElement carrinho;
 	
 	@CacheLookup

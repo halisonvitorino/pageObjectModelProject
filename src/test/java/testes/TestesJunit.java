@@ -1,13 +1,14 @@
 package testes;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import actions.CartActions;
-import actions.CheckoutInformationActions;
-import actions.CheckoutOverviewActions;
-import actions.HomePageActions;
-import actions.SelectProductActions;
+import pageActions.CartActions;
+import pageActions.CheckoutInformationActions;
+import pageActions.CheckoutOverviewActions;
+import pageActions.HomePageActions;
+import pageActions.SelectProductActions;
 import utils.BrowserAndPageManager;
 
 class TestesJunit extends BrowserAndPageManager{
@@ -38,11 +39,12 @@ class TestesJunit extends BrowserAndPageManager{
 		selectProductActions.escolherProduto();
 		cartActions.irParaCheckout();
 		checkoutInformationActions.preencherInformações("halison", "Vitorino", "12345678");
+		checkoutInformationActions.continuarCompra();
 		checkoutOverviewActions.finalizarCheckout();
 	}
 
-//	@AfterAll
-//	static void fecharBrowser() {
-//		browserAndPageManager.finalizarDriver();
-//	}
+	@AfterAll
+	static void fecharBrowser() {
+		browserAndPageManager.finalizarDriver();
+	}
 }

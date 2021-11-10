@@ -1,4 +1,4 @@
-package actions;
+package pageActions;
 
 import pageObjects.CartPageObject;
 import utils.BrowserAndPageManager;
