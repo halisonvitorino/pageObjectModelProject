@@ -1,16 +1,11 @@
 package actions;
 
-import org.openqa.selenium.WebDriver;
-
 import pageObjects.SelectProductPageObject;
+import utils.BrowserAndPageManager;
 
-public class SelectProductActions {
+public class SelectProductActions extends BrowserAndPageManager{
 	
-	static SelectProductPageObject selectProductPageObject;
-
-	public SelectProductActions(WebDriver driver) {		
-		selectProductPageObject = new SelectProductPageObject(driver);
-	}
+	SelectProductPageObject selectProductPageObject = new SelectProductPageObject();
 	
 	public void escolherProduto() {
 		selectProductPageObject.getProductSauceLabsBackpackButton().click();

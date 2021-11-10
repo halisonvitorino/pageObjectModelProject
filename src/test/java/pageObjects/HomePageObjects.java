@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 import utils.BrowserAndPageManager;
 
-
 public class HomePageObjects extends BrowserAndPageManager{	
 	
 	@FindBy(id="user-name")

@@ -1,22 +1,17 @@
 package actions;
 
-import org.openqa.selenium.WebDriver;
-
 import pageObjects.CartPageObject;
+import utils.BrowserAndPageManager;
 
-public class CartActions {
+public class CartActions extends BrowserAndPageManager{
 	
-	static CartPageObject cartPageObjects;
+	CartPageObject cartPageObjects = new CartPageObject();
 	
-	public CartActions(WebDriver driver) {
-		cartPageObjects = new CartPageObject(driver);
-	}
-	
-	static void voltarAsCompras() {
+	public void voltarAsCompras() {
 		cartPageObjects.getButttonContinuarComprando().click();
 	}
 
-	static void removerProdutosDoCarrinho() {
+	public void removerProdutosDoCarrinho() {
 		cartPageObjects.getButtonRemoverProduto().click();
 	}
 	

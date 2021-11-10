@@ -29,10 +29,10 @@ class TestesJunit extends BrowserAndPageManager{
 	void realizarCompraComSucesso() {
 		
 		homePageActions = new HomePageActions();
-//		selectProductActions = new SelectProductActions(driver);
-//		cartActions = new CartActions(driver);
-//		checkoutInformationActions = new CheckoutInformationActions(driver);
-//		checkoutOverviewActions = new CheckoutOverviewActions(driver);
+		selectProductActions = new SelectProductActions();
+//		cartActions = new CartActions();
+//		checkoutInformationActions = new CheckoutInformationActions();
+//		checkoutOverviewActions = new CheckoutOverviewActions();
 
 		homePageActions.login("standard_user", "secret_sauce");
 		selectProductActions.escolherProduto();

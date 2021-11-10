@@ -1,14 +1,12 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class CheckoutOverviewPageObjects {
+import utils.BrowserAndPageManager;
 
-	private WebDriver driver;
+public class CheckoutOverviewPageObjects extends BrowserAndPageManager{
 
 	@CacheLookup
 	@FindBy(name = "finish")
@@ -18,22 +16,12 @@ public class CheckoutOverviewPageObjects {
 	@FindBy(name = "cancel")
 	private WebElement buttonCancelarFinalizarCompra;
 
-	public WebDriver getDriver() {
-		return driver;
-	}
-
 	public WebElement getButtonFinalizarCompra() {
 		return buttonFinalizarCompra;
 	}
 
 	public WebElement getButtonCancelarFinalizarCompra() {
 		return buttonCancelarFinalizarCompra;
-	}
-
-	public CheckoutOverviewPageObjects(WebDriver driver) {
-		super();
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
 	}
 
 }

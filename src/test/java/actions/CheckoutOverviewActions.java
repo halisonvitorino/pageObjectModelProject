@@ -1,22 +1,17 @@
 package actions;
 
-import org.openqa.selenium.WebDriver;
-
 import pageObjects.CheckoutOverviewPageObjects;
+import utils.BrowserAndPageManager;
 
-public class CheckoutOverviewActions {
+public class CheckoutOverviewActions extends BrowserAndPageManager{
 	
-	static CheckoutOverviewPageObjects checkoutOverviewPageObjects;
-	
-	public CheckoutOverviewActions(WebDriver driver) {
-		checkoutOverviewPageObjects = new CheckoutOverviewPageObjects(driver);
-	}
+	CheckoutOverviewPageObjects checkoutOverviewPageObjects = new CheckoutOverviewPageObjects();
 	
 	public void finalizarCheckout() {
 		checkoutOverviewPageObjects.getButtonFinalizarCompra().click();
 	}
 	
-	static void cancelarFinalizarCompra() {
+	public void cancelarFinalizarCompra() {
 		checkoutOverviewPageObjects.getButtonCancelarFinalizarCompra().click();
 	}
 }

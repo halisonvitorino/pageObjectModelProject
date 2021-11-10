@@ -6,9 +6,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CartPageObject {
-	
-	private WebDriver driver;
+import utils.BrowserAndPageManager;
+
+public class CartPageObject extends BrowserAndPageManager{
 	
 	@CacheLookup
 	@FindBy(css="div.cart_quantity")
@@ -34,10 +34,6 @@ public class CartPageObject {
 	@FindBy(id="checkout")
 	private WebElement buttonCheckOut;
 
-	public WebDriver getDriver() {
-		return driver;
-	}
-
 	public WebElement getQuantidadeNoCarrinho() {
 		return quantidadeNoCarrinho;
 	}
@@ -62,9 +58,4 @@ public class CartPageObject {
 		return buttonCheckOut;
 	}
 
-	public CartPageObject(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
-	
 }

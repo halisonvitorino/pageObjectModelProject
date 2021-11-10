@@ -1,16 +1,11 @@
 package actions;
 
-import org.openqa.selenium.WebDriver;
-
 import pageObjects.CheckoutInformationPageObjects;
+import utils.BrowserAndPageManager;
 
-public class CheckoutInformationActions {
+public class CheckoutInformationActions extends BrowserAndPageManager{
 	
-	static CheckoutInformationPageObjects checkOutInformationPageObjects;
-	
-	public CheckoutInformationActions(WebDriver driver) {
-		checkOutInformationPageObjects = new CheckoutInformationPageObjects(driver);
-	}
+	CheckoutInformationPageObjects checkOutInformationPageObjects = new CheckoutInformationPageObjects();
 	
 	public void preencherInformações(String firstName, String lastName, String postalCode ) {
 		checkOutInformationPageObjects.getFirstNameField().sendKeys(firstName);
@@ -18,11 +13,11 @@ public class CheckoutInformationActions {
 		checkOutInformationPageObjects.getPostalCodeField().sendKeys(postalCode);
 	}
 	
-	static void continuarCompra() {
+	public void continuarCompra() {
 		checkOutInformationPageObjects.getButtonContinue().click();
 	}
 	
-	static void cancelarPreencherInformacoes() {
+	public void cancelarPreencherInformacoes() {
 		checkOutInformationPageObjects.getButtonCancel().click();
 	}
 
