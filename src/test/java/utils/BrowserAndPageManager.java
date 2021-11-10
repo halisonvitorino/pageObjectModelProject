@@ -2,19 +2,23 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserAndPageManager {
 	
-	static WebDriver driver;
+	private static WebDriver driver;
 	
+	public BrowserAndPageManager() {
+		PageFactory.initElements(driver, this);
+	}	
+
 	public void setupChromeDriver() {
 		WebDriverManager.chromedriver().setup();
-	}
-
-	public void iniciarDriver() {
 		driver = new ChromeDriver();
+		driver.navigate().to("https://www.saucedemo.com/");
+		driver.manage().window().maximize();
 	}
 	
 	public void finalizarDriver() {
@@ -22,12 +26,4 @@ public class BrowserAndPageManager {
             driver.quit();
         }
     }
-	
-	public void acessarURL() {
-		driver.get("https://www.saucedemo.com/");
-	}
-	
-	public void maximizarJanela() {
-		driver.manage().window().maximize();
-	}
 }

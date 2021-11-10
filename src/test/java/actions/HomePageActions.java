@@ -1,17 +1,12 @@
 package actions;
 
-import org.openqa.selenium.WebDriver;
-
 import pageObjects.HomePageObjects;
+import utils.BrowserAndPageManager;
 
-public class HomePageActions {
+public class HomePageActions extends BrowserAndPageManager{
 	
-	static HomePageObjects homePageObjects;
+	HomePageObjects homePageObjects = new HomePageObjects();
 
-	public HomePageActions (WebDriver driver) {
-		homePageObjects = new HomePageObjects(driver);
-	}
-	
 	public void login(String usuario, String senha) {
 		homePageObjects.getInputUserName().sendKeys(usuario);
 		homePageObjects.getInputPassWord().sendKeys(senha);
