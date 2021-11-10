@@ -30,9 +30,9 @@ class TestesJunit extends BrowserAndPageManager{
 		
 		homePageActions = new HomePageActions();
 		selectProductActions = new SelectProductActions();
-//		cartActions = new CartActions();
-//		checkoutInformationActions = new CheckoutInformationActions();
-//		checkoutOverviewActions = new CheckoutOverviewActions();
+		cartActions = new CartActions();
+		checkoutInformationActions = new CheckoutInformationActions();
+		checkoutOverviewActions = new CheckoutOverviewActions();
 
 		homePageActions.login("standard_user", "secret_sauce");
 		selectProductActions.escolherProduto();
